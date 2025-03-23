@@ -7,7 +7,7 @@ const Home = () => {
   return (
     <div>
         <Header/>
-        <div>
+        <div className='my-[100px]'>
             <Blogs/>
             <Pagination/>
         </div>

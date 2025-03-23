@@ -11,16 +11,19 @@ const CategoryPage = () => {
   return (
     <div>
         <Header/>
-        <div>
-            <button onClick={()=>Navigate(-1)}>
-                back
-            </button>
-            <h2>
-                Blogs on <span>{category}</span>
-            </h2>
+        <div className='my-[100px]'>
+            <div className='mt-[100px] mb-6 max-w-2xl mx-auto flex items-center space-x-2'>
+                <button className="border-2 border-gray-300 py-1 px-4 rounded-md"
+                onClick={()=>Navigate(-1)}>
+                    Back
+                </button>
+                <h2 className='text-xl font-bold'>
+                    Blogs On <span className='underline'>{category.replaceAll("-"," ")}</span>
+                </h2>
+            </div>
+            <Blogs/>
+            <Pagination/>
         </div>
-        <Blogs/>
-        <Pagination/>
     </div>
   );
 }

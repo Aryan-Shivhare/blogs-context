@@ -39,23 +39,24 @@ const BlogPage = () => {
   return (
     <div>
         <Header/>
-        <div>
-            <button onClick={()=>Navigate(-1)}>
-                back
+        <div className="mt-[100px] mb-6 max-w-2xl mx-auto">
+            <button className="border-2 border-gray-300 py-1 px-4 rounded-md" onClick={()=>Navigate(-1)}>
+                Back
             </button>
         </div>
         {
             loading ? 
             (<div>
-                <p>Loading</p>
+                <p>Loading ...</p>
             </div>) : 
             blog ? 
             (<div>
                 <BlogDetails post={blog}/>
-                <h2>Related Blogs</h2>
+                <h2 className='max-w-2xl mx-auto mt-12 font-bold text-3xl mb-8'>Related Blogs</h2>
                 {
                     relatedBlogs.map((post)=>(
-                        <div key={post.id}>
+                        <div className="flex flex-col gap-y-10 my-4" 
+                        key={post.id}>
                             <BlogDetails post={post}/>
                         </div>
                     ))
