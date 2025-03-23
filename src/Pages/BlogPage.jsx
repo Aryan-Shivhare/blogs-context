@@ -1,9 +1,7 @@
 import React, { useContext, useState } from 'react'
 import Header from '../components/Header';
 import { useLocation, useNavigate } from 'react-router-dom';
-import Blogs from '../components/Blogs';
 import { AppContext } from '../context/AppContext';
-import { baseUrl } from '../baseUrl';
 import { useEffect } from 'react';
 import BlogDetails from '../components/BlogDetails';
 
@@ -46,8 +44,8 @@ const BlogPage = () => {
         </div>
         {
             loading ? 
-            (<div>
-                <p>Loading ...</p>
+            (<div className="min-h-[80vh] w-full flex justify-center items-center">
+                <p className="text-center font-bold text-3xl">Loading ...</p>
             </div>) : 
             blog ? 
             (<div>
@@ -62,8 +60,8 @@ const BlogPage = () => {
                     ))
                 }
             </div>) : 
-            (<div>
-                <p>No Blog Found</p>
+            (<div className="min-h-[80vh] w-full flex justify-center items-center">
+                <p className="text-center font-bold text-3xl">No Blogs Found !</p>
             </div>
             )
         }
